@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nanda S. | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"DM Sans",sans-serif;
+    background:#070a11;
+    color:#f7f8fc;
+    line-height:1.65;
+    overflow-x:hidden;
+}
+
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#527cff;
+    filter:blur(170px);
+    opacity:.12;
+    top:-180px;
+    left:-180px;
+    z-index:-1;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00b7ff;
+    filter:blur(170px);
+    opacity:.08;
+    right:-180px;
+    bottom:-150px;
+    z-index:-1;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:min(1160px,calc(100% - 40px));
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(7,10,17,.78);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+nav{
+    height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-family:"Space Grotesk";
+    font-size:25px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#82adff;
+}
+
+.nav{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav a{
+    color:#aeb7ca;
+    font-size:14px;
+    transition:.3s;
+}
+
+.nav a:hover{
+    color:white;
+}
+
+.menu{
+    display:none;
+    border:0;
+    background:none;
+    color:white;
+    font-size:27px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+    padding:125px 0 80px;
+}
+
+.pill{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:8px 14px;
+    border-radius:50px;
+    border:1px solid rgba(130,173,255,.25);
+    background:rgba(130,173,255,.06);
+    color:#bdd3ff;
+    font-size:13px;
+    margin-bottom:24px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+    background:#59e38c;
+    border-radius:50%;
+    box-shadow:0 0 12px #59e38c;
+}
+
+.hero h1{
+    font-family:"Space Grotesk";
+    font-size:clamp(58px,8vw,100px);
+    line-height:.93;
+    letter-spacing:-5px;
+}
+
+.gradient{
+    background:linear-gradient(90deg,#fff,#7caaff,#c5dbff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.hero h2{
+    color:#adb6c9;
+    font-size:clamp(19px,2.5vw,27px);
+    font-weight:500;
+    margin:23px 0 15px;
+}
+
+.hero p{
+    max-width:700px;
+    color:#9aa3b7;
+    font-size:17px;
+}
+
+.actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:11px;
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:13px 19px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.09);
+    font-size:14px;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.primary{
+    background:white;
+    color:#080b12;
+}
+
+.ghost{
+    background:rgba(255,255,255,.04);
+    color:#e7ebf5;
+}
+
+/* PROFILE PHOTO */
+
+.hero-photo{
+    display:flex;
+    justify-content:center;
+}
+
+.photo-frame{
+    width:min(390px,100%);
+    position:relative;
+}
+
+.photo-frame::after{
+    content:"";
+    position:absolute;
+    inset:12px -12px -12px 12px;
+    border:1px solid rgba(130,173,255,.25);
+    border-radius:28px;
+    z-index:-1;
+    transform:rotate(4deg);
+}
+
+.photo-frame img{
+    display:block;
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:25px;
+    border:1px solid rgba(255,255,255,.1);
+    background:#111827;
+}
+
+.photo-caption{
+    position:absolute;
+    left:16px;
+    bottom:16px;
+    padding:9px 13px;
+    border-radius:10px;
+    background:rgba(5,8,14,.75);
+    backdrop-filter:blur(12px);
+    font-size:12px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:105px 0;
+}
+
+.kicker{
+    color:#82adff;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.title{
+    font-family:"Space Grotesk";
+    font-size:clamp(38px,5vw,58px);
+    line-height:1.05;
+    margin-bottom:18px;
+}
+
+.sub{
+    max-width:720px;
+    color:#9aa3b7;
+    margin-bottom:42px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:60px;
+}
+
+.card{
+    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.015)
+    );
+}
+
+.card p{
+    color:#a7afc1;
+    margin-bottom:16px;
+}
+
+.card strong{
+    color:#f0f3fb;
+}
+
+/* SKILLS */
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.skill{
+    padding:24px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(255,255,255,.025);
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-6px);
+    border-color:rgba(130,173,255,.3);
+}
+
+.icon{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.skill h3{
+    font-size:18px;
+    margin-bottom:6px;
+}
+
+.skill p{
+    color:#9099ad;
+    font-size:13px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.project{
+    padding:29px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.045),
+        rgba(255,255,255,.015)
+    );
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+    border-color:rgba(130,173,255,.3);
+}
+
+.featured{
+    grid-column:1/-1;
+}
+
+.num{
+    color:#7699d9;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.project h3{
+    font-family:"Space Grotesk";
+    font-size:28px;
+    margin-bottom:9px;
+}
+
+.featured h3{
+    font-size:42px;
+}
+
+.project p{
+    color:#959eb1;
+    font-size:14px;
+    margin-bottom:18px;
+    max-width:850px;
+}
+
+.tags{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.tag{
+    padding:6px 9px;
+    border-radius:7px;
+    background:rgba(130,173,255,.08);
+    color:#a9c6ff;
+    font-size:11px;
+}
+
+/* ON STAGE */
+
+.stage{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.stage-photo{
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.stage-photo img{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    display:block;
+    transition:.5s;
+}
+
+.stage-photo:hover img{
+    transform:scale(1.04);
+}
+
+.caption{
+    position:absolute;
+    left:15px;
+    right:15px;
+    bottom:15px;
+    padding:12px 14px;
+    border-radius:12px;
+    background:rgba(5,8,14,.76);
+    backdrop-filter:blur(12px);
+}
+
+.caption b{
+    font-size:14px;
+}
+
+.caption span{
+    display:block;
+    color:#a5aec0;
+    font-size:12px;
+}
+
+/* TIMELINE */
+
+.timeline{
+    border-left:1px solid rgba(255,255,255,.1);
+    margin-left:5px;
+}
+
+.item{
+    position:relative;
+    padding:0 0 34px 34px;
+}
+
+.item::before{
+    content:"";
+    position:absolute;
+    left:-5px;
+    top:7px;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#82adff;
+    box-shadow:0 0 15px rgba(130,173,255,.55);
+}
+
+.item h3{
+    font-size:18px;
+    margin-bottom:5px;
+}
+
+.item p{
+    color:#919aad;
+    font-size:14px;
+}
+
+/* EDUCATION */
+
+.education{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.edu{
+    padding:28px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    background:rgba(255,255,255,.025);
+}
+
+.edu h3{
+    font-family:"Space Grotesk";
+    font-size:21px;
+    margin-bottom:7px;
+}
+
+.edu p{
+    color:#959eb1;
+    font-size:14px;
+}
+
+/* CERTIFICATES */
+
+.certs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.cert{
+    padding:13px 16px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:10px;
+    background:rgba(255,255,255,.035);
+    color:#c8cfdd;
+    font-size:13px;
+}
+
+/* CONTACT */
+
+.contact{
+    text-align:center;
+    padding-bottom:80px;
+}
+
+.contact h2{
+    font-family:"Space Grotesk";
+    font-size:clamp(45px,7vw,78px);
+    line-height:.98;
+    margin-bottom:18px;
+}
+
+.contact p{
+    max-width:650px;
+    margin:auto;
+    color:#9aa3b7;
+}
+
+.contact .actions{
+    justify-content:center;
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding:25px 0;
+    text-align:center;
+    color:#687286;
+    font-size:13px;
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(25px);
+    transition:.7s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TABLET */
+
+@media(max-width:850px){
+
+    .nav{
+        display:none;
+        position:absolute;
+        top:65px;
+        right:20px;
+        width:210px;
+        flex-direction:column;
+        gap:17px;
+        padding:20px;
+        background:#0c1220;
+        border:1px solid rgba(255,255,255,.08);
+        border-radius:14px;
+    }
+
+    .nav.open{
+        display:flex;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:45px;
+    }
+
+    .hero p{
+        margin:auto;
+    }
+
+    .actions{
+        justify-content:center;
+    }
+
+    .hero-photo{
+        order:-1;
+    }
+
+    .photo-frame{
+        width:280px;
+    }
+
+    .photo-frame img{
+        height:370px;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .stage{
+        grid-template-columns:1fr;
+    }
+
+    .education{
+        grid-template-columns:1fr;
+    }
+}
+
+/* PHONE */
+
+@media(max-width:520px){
+
+    .container{
+        width:calc(100% - 30px);
+    }
+
+    section{
+        padding:80px 0;
+    }
+
+    h1{
+        font-size:59px;
+        letter-spacing:-3px;
+    }
+
+    .grid,
+    .projects{
+        grid-template-columns:1fr;
+    }
+
+    .featured{
+        grid-column:auto;
+    }
+
+    .featured h3{
+        font-size:34px;
+    }
+
+    .stage-photo img{
+        height:390px;
+    }
+
+    .photo-frame{
+        width:250px;
+    }
+
+    .photo-frame img{
+        height:330px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .actions{
+        width:100%;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+<nav class="container">
+
+<a href="#home" class="logo">
+    Nanda<span>.</span>
+</a>
+
+<button class="menu"
+onclick="document.querySelector('.nav').classList.toggle('open')">
+    ☰
+</button>
+
+<ul class="nav">
+
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#stage">On Stage</a></li>
+<li><a href="#leadership">Leadership</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home">
+
+<div class="container hero">
+
+<div class="reveal">
+
+<div class="pill">
+<span class="dot"></span>
+Open to internships & collaborations
+</div>
+
+<h1>
+Hi, I'm<br>
+<span class="gradient">Nanda S.</span>
+</h1>
+
+<h2>
+Data Science · AI/ML · Product Builder
+</h2>
+
+<p>
+B.Tech CSE (Data Science) student who enjoys turning
+real-world problems into technology-driven solutions —
+and communicating those ideas on stage.
+</p>
+
+<div class="actions">
+
+<a href="#projects" class="btn primary">
+Explore My Work →
+</a>
+
+<a href="#contact" class="btn ghost">
+Let's Connect
+</a>
+
+</div>
+
+</div>
+
+
+<!-- MAIN PHOTO -->
+
+<div class="hero-photo reveal">
+
+<div class="photo-frame">
+
+<img src="./Profile.jpeg" alt="Nanda S.">
+
+<div class="photo-caption">
+Builder • Speaker • Leader
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+<div class="container about">
+
+<div class="reveal">
+
+<div class="kicker">
+01 — About Me
+</div>
+
+<h2 class="title">
+Building with<br>
+<span class="gradient">purpose.</span>
+</h2>
+
+</div>
+
+<div class="card reveal">
+
+<p>
+I'm Nanda, a B.Tech Computer Science & Engineering
+student specializing in Data Science.
+</p>
+
+<p>
+My interests sit at the intersection of
+<strong>Data Science, AI/ML, application development
+and product thinking.</strong>
+</p>
+
+<p>
+I enjoy moving from problem identification to feature
+planning and working toward practical products.
+</p>
+
+<p>
+Outside coding, <strong>public speaking, compering,
+anchoring and leadership</strong> are a major part of what I do.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="kicker reveal">
+02 — Skills
+</div>
+
+<h2 class="title reveal">
+My <span class="gradient">Toolkit</span>
+</h2>
+
+<p class="sub reveal">
+Technical ability backed by communication,
+creativity and leadership.
+</p>
+
+<div class="grid">
+
+<div class="skill reveal">
+<div class="icon">🐍</div>
+<h3>Python</h3>
+<p>Programming, data handling and AI/ML fundamentals.</p>
+</div>
+
+<div class="skill reveal">
+<div class="icon">📊</div>
+<h3>Data Science</h3>
+<p>Data structures, analytics and machine learning fundamentals.</p>
+</div>
+
+<div class="skill reveal">
+<div class="icon">🤖</div>
+<h3>AI / ML</h3>
+<p>AI concepts and AI-powered application ideas.</p>
+</div>
+
+<div class="skill reveal">
+<div class="icon">📱</div>
+<h3>Flutter & Dart</h3>
+<p>Cross-platform mobile application development.</p>
+</div>
+
+<div class="skill reveal">
+<div class="icon">💻</div>
+<h3>Programming</h3>
+<p>C, Java basics, HTML/CSS and OOP fundamentals.</p>
+</div>
+
+<div class="skill reveal">
+<div class="icon">🎤</div>
+<h3>Public Speaking</h3>
+<p>Compering, anchoring, presentations and audience engagement.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="kicker reveal">
+03 — Selected Work
+</div>
+
+<h2 class="title reveal">
+Ideas into <span class="gradient">Products.</span>
+</h2>
+
+<p class="sub reveal">
+Projects focused on real-world problems,
+innovation and technology.
+</p>
+
+<div class="projects">
+
+
+<div class="project featured reveal">
+
+<div class="num">
+01 / FEATURED PROJECT
+</div>
+
+<h3>MANASA</h3>
+
+<p>
+A bilingual Malayalam + English gamified DBT-based
+mental health support platform designed around the flow:
+LEARN → PRACTICE → TRACK.
+</p>
+
+<div class="tags">
+
+<span class="tag">Flutter</span>
+<span class="tag">Dart</span>
+<span class="tag">DBT</span>
+<span class="tag">AI/ML</span>
+<span class="tag">Product Design</span>
+
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="num">02</div>
+
+<h3>FeMaura</h3>
+
+<p>
+Women's safety and wellbeing application exploring
+technology and AI/ML applications.
+</p>
+
+<div class="tags">
+<span class="tag">AI/ML</span>
+<span class="tag">Wellbeing</span>
+<span class="tag">Product</span>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="num">03</div>
+
+<h3>EduHub</h3>
+
+<p>
+Java-based college management system built around
+core administrative workflows.
+</p>
+
+<div class="tags">
+<span class="tag">Java</span>
+<span class="tag">OOP</span>
+<span class="tag">Management System</span>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="num">04</div>
+
+<h3>Entrepreneur AI Assistant</h3>
+
+<p>
+AI-powered concept created during a hackathon to support
+early-stage entrepreneurs with startup decisions.
+</p>
+
+<div class="tags">
+<span class="tag">AI</span>
+<span class="tag">Hackathon</span>
+<span class="tag">Entrepreneurship</span>
+</div>
+
+</div>
+
+
+<div class="project reveal">
+
+<div class="num">05</div>
+
+<h3>Memento</h3>
+
+<p>
+Digital journal and memory application with mood tracking,
+scrapbook-style pages and an AI assistant.
+</p>
+
+<div class="tags">
+<span class="tag">React</span>
+<span class="tag">AI</span>
+<span class="tag">UX</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= ON STAGE ================= -->
+
+<section id="stage">
+
+<div class="container">
+
+<div class="kicker reveal">
+04 — On Stage
+</div>
+
+<h2 class="title reveal">
+More than a <span class="gradient">coder.</span>
+</h2>
+
+<p class="sub reveal">
+I love presenting ideas, hosting events and creating
+energy in a room.
+</p>
+
+<div class="stage">
+
+
+<div class="stage-photo reveal">
+
+<img
+    src="./comparing.jpeg"
+    alt="..."
+>
+
+<div class="caption">
+
+<b>Compering & Event Hosting</b>
+
+<span>
+Creating energy and connecting with the audience
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stage-photo reveal">
+
+<img
+    src="./publicspeaking.jpeg"
+    alt="..."
+>
+>
+
+<div class="caption">
+
+<b>Public Speaking</b>
+
+<span>
+Presentations and audience engagement
+</span>
+
+</div>
+
+</div>
+
+
+<div class="stage-photo reveal">
+
+<img
+    src="./ieee.jpeg"
+    alt="Nanda anchoring IEEE event"
+>
+
+<div class="caption">
+
+<b>IEEE Events</b>
+
+<span>
+Technical event anchoring
+</span>
+
+</div>
+
+</div>
+
+
+<div class="card reveal">
+
+<div class="kicker">
+My Edge
+</div>
+
+<h3 style="
+font-family:'Space Grotesk';
+font-size:34px;
+line-height:1.1;
+margin-bottom:15px;
+">
+
+I don't just build ideas.<br>
+
+<span class="gradient">
+I communicate them.
+</span>
+
+</h3>
+
+<p>
+Public speaking and technical communication help me
+turn complex ideas into stories that people can
+understand and remember.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LEADERSHIP ================= -->
+
+<section id="leadership">
+
+<div class="container">
+
+<div class="kicker reveal">
+05 — Leadership & Impact
+</div>
+
+<h2 class="title reveal">
+Leading beyond the <span class="gradient">classroom.</span>
+</h2>
+
+<div class="timeline">
+
+<div class="item reveal">
+
+<h3>
+Chair — IEEE Industry Applications Society, UKFCET
+</h3>
+
+<p>
+Leadership, society programming and student engagement.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Women & Innovation Lead — IEDC / UKFCET
+</h3>
+
+<p>
+Innovation-focused student initiatives and activities.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Content Creator & Anchor — UKFCET
+</h3>
+
+<p>
+Event communication, content creation and stage hosting.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+College Union Representative
+</h3>
+
+<p>
+Student representation and communication.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Kerala Startup Mission — Innovation Activities
+</h3>
+
+<p>
+Participation in startup, innovation and entrepreneurship programmes.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Hackathons & Ideathons
+</h3>
+
+<p>
+Problem-solving, pitching and technology-based idea development.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="kicker reveal">
+06 — Experience
+</div>
+
+<h2 class="title reveal">
+Learning through <span class="gradient">experience.</span>
+</h2>
+
+<div class="timeline">
+
+<div class="item reveal">
+
+<h3>
+AI & Machine Learning Intern — Srishti Innovation
+</h3>
+
+<p>
+AI and machine learning focused internship experience.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Flutter & Dart Intern — Genzee Technologies
+</h3>
+
+<p>
+Mobile application development using Flutter and Dart.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+Young Innovators Programme — YIP
+</h3>
+
+<p>
+Innovation and problem-solving focused experience.
+</p>
+
+</div>
+
+
+<div class="item reveal">
+
+<h3>
+TCS MasterCraft™ DataPlus
+</h3>
+
+<p>
+Data-focused virtual internship experience.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EDUCATION ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="kicker reveal">
+07 — Education
+</div>
+
+<h2 class="title reveal">
+Academic <span class="gradient">Background</span>
+</h2>
+
+<div class="education">
+
+<div class="edu reveal">
+
+<h3>
+B.Tech — CSE (Data Science)
+</h3>
+
+<p>
+UKF College of Engineering & Technology,
+Parippally, Kollam
+</p>
+
+<p>
+2024 – Present
+</p>
+
+</div>
+
+
+<div class="edu reveal">
+
+<h3>
+Higher Secondary
+</h3>
+
+<p>95%</p>
+
+<br>
+
+<h3>
+SSLC
+</h3>
+
+<p>Full A+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CERTIFICATIONS ================= -->
+
+<section>
+
+<div class="container">
+
+<div class="kicker reveal">
+08 — Certifications
+</div>
+
+<h2 class="title reveal">
+Learning & <span class="gradient">Certifications</span>
+</h2>
+
+<div class="certs reveal">
+
+<div class="cert">
+NPTEL — Python
+</div>
+
+<div class="cert">
+NASSCOM FutureSkills — Digital Skills
+</div>
+
+<div class="cert">
+Great Learning — Python Fundamentals
+</div>
+
+<div class="cert">
+TCS MasterCraft™ DataPlus
+</div>
+
+<div class="cert">
+AI & ML — Srishti Innovation
+</div>
+
+<div class="cert">
+Flutter & Dart — Genzee Technologies
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="contact">
+
+<div class="container">
+
+<div class="kicker reveal">
+09 — Contact
+</div>
+
+<h2 class="reveal">
+
+Let's build something<br>
+
+<span class="gradient">
+meaningful.
+</span>
+
+</h2>
+
+<p class="reveal">
+
+Interested in internships, technology projects,
+innovation opportunities or collaborations?
+
+Let's connect.
+
+</p>
+
+
+<div class="actions reveal">
+
+
+<!-- EMAIL -->
+
+<a
+href="mailto:nandasklm2006@gmail.com"
+class="btn primary"
+>
+✉ Connect With Me
+</a>
+
+
+<!-- LINKEDIN -->
+
+<a
+href="https://www.linkedin.com/in/nanda-s-a2604233a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+target="_blank"
+rel="noopener noreferrer"
+class="btn ghost"
+>
+in LinkedIn
+</a>
+
+
+<!-- RESUME -->
+
+<a
+href="Nanda S .pdf"
+target="_blank"
+class="btn ghost"
+>
+📄 View Resume
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+© <span id="year"></span> Nanda S.
+<br>
+Built with curiosity, code & creativity.
+
+</footer>
+
+
+<script>
+
+/* MOBILE MENU */
+
+document
+.querySelectorAll(".nav a")
+.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .querySelector(".nav")
+        .classList.remove("open");
+
+    });
+
+});
+
+
+/* SCROLL ANIMATION */
+
+const observer = new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold:.12
+}
+
+);
+
+
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
+
+observer.observe(element);
+
+});
+
+
+/* YEAR */
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
